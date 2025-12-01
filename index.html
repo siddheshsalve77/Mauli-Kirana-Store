@@ -81,7 +81,7 @@
         // --- Custom SVG Icons for Reliability ---
         
         const Icons = {
-            // New Divine Logo with Tulsi Leaf
+            // Divine Logo with Tulsi Leaf
             Kalash: () => (
                 <svg viewBox="0 0 100 120" className="w-full h-full" fill="none">
                     <defs>
@@ -115,7 +115,7 @@
                     {/* The Dot (Bukya/Chandan) */}
                     <ellipse cx="50" cy="55" rx="5" ry="10" fill="#1a1a1a" />
                     
-                    {/* Tulsi Leaf (Holy Basil) - Adding the spiritual touch */}
+                    {/* Tulsi Leaf (Holy Basil) */}
                     <path 
                         d="M50 95 Q60 85 65 95 Q60 105 50 95" 
                         fill="#4CAF50" 
@@ -704,15 +704,15 @@
                                     animate={{ opacity: 1, y: 0 }}
                                     className="bg-white border-2 border-mauli-gold rounded-xl p-6 max-w-sm mx-auto shadow-xl"
                                 >
-                                    <h3 className="text-xl text-gray-500 font-bold mb-1">अभिनंदन!</h3>
+                                    <h3 className="text-xl text-gray-500 font-bold mb-1">अभिनंदन! (Congratulations!)</h3>
                                     <div className="text-4xl font-display text-mauli-maroon mb-2">
                                         {result.label} सूट
                                     </div>
                                     <div className="bg-orange-50 text-orange-800 text-xs px-3 py-2 rounded-lg font-bold border border-orange-100 inline-block">
-                                        सूट एम.आर.पी. (MRP) वर लागू
+                                        सूट एकूण बिलावर लागू
                                     </div>
                                     <p className="text-xs text-gray-400 mt-2 font-medium">
-                                        *या ऑफरचा लाभ घेण्यासाठी किमान ₹४९९ ची खरेदी आवश्यक आहे.
+                                        *या ऑफरचा लाभ घेण्यासाठी किमान ₹९९९ ची खरेदी आवश्यक आहे.
                                     </p>
                                     <button 
                                         onClick={() => window.open(`https://wa.me/917218924624?text=नमस्कार! मला व्हीलवर ${result.label} डिस्काउंट मिळाले आहे. मला ऑर्डर करायची आहे.`, '_blank')}
@@ -726,13 +726,39 @@
                         
                         {!result && !spinning && (
                              <p className="text-xs text-gray-400 mt-4 max-w-md mx-auto">
-                                *अटी व शर्ती लागू: किमान ₹४९९ च्या खरेदीवर सूट उपलब्ध.
+                                *अटी व शर्ती लागू: किमान ₹९९९ च्या एकूण बिलावर सूट उपलब्ध.
                             </p>
                         )}
                     </div>
                 </section>
             );
         };
+
+        const InstagramPromo = () => (
+            <section className="py-10 px-4 bg-white">
+                <div className="max-w-4xl mx-auto bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 rounded-2xl p-1 shadow-xl">
+                    <div className="bg-white rounded-xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+                        <div className="flex items-center gap-4">
+                            <div className="w-16 h-16 bg-pink-50 rounded-full flex items-center justify-center shrink-0">
+                                <i className="ph-fill ph-instagram-logo text-4xl text-pink-600"></i>
+                            </div>
+                            <div>
+                                <h3 className="font-display text-2xl text-mauli-maroon mb-1">इंस्टाग्राम ऑफर! (Instagram Offer)</h3>
+                                <p className="text-gray-600 font-medium">
+                                    माऊली किराणा बाजारच्या पिशवीसोबत तुमचा फोटो पोस्ट करा आणि <span className="text-pink-600 font-bold">एक चॉकलेट फ्री मिळवा!</span>
+                                </p>
+                            </div>
+                        </div>
+                        <button 
+                            onClick={() => window.open('https://www.instagram.com/maulikiranabazar?igsh=cnFxcDZyc3F3bTRz', '_blank')}
+                            className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-full font-bold shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all whitespace-nowrap"
+                        >
+                            आता फॉलो करा (Follow Now)
+                        </button>
+                    </div>
+                </div>
+            </section>
+        );
 
         const Location = () => (
             <section id="location" className="py-20 px-4">
@@ -847,6 +873,7 @@
                         <span>❖</span><span>●</span><span>❖</span><span>●</span><span>❖</span>
                     </div>
                     <DiscountWheel />
+                    <InstagramPromo />
 
                     <Location />
                     <Footer />
