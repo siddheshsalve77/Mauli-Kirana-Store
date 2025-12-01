@@ -649,6 +649,31 @@
             );
         };
 
+        const WhatsAppGroup = () => (
+            <section className="py-6 px-4 bg-mauli-base">
+                <div className="max-w-4xl mx-auto bg-green-100 rounded-2xl border-2 border-green-200 p-6 shadow-md flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div className="flex items-center gap-4">
+                        <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shrink-0 shadow-sm">
+                            <i className="ph-fill ph-users-three text-3xl text-green-600"></i>
+                        </div>
+                        <div>
+                            <h3 className="font-display text-2xl text-green-900 mb-1">एक्सक्लुझिव्ह ऑफर्ससाठी!</h3>
+                            <p className="text-green-800 font-medium">
+                                अधिक ऑफर्स आणि माहितीसाठी आमच्या व्हॉट्सॲप ग्रुपला फॉलो करा.
+                            </p>
+                        </div>
+                    </div>
+                    <button 
+                        onClick={() => window.open('https://chat.whatsapp.com/GnAhhiBbRf02jvEfSXuCk2', '_blank')}
+                        className="bg-green-600 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:bg-green-700 transform hover:-translate-y-1 transition-all flex items-center gap-2 whitespace-nowrap"
+                    >
+                        <i className="ph-fill ph-whatsapp-logo text-xl"></i>
+                        ग्रुप जॉईन करा
+                    </button>
+                </div>
+            </section>
+        );
+
         const InstagramPromo = () => (
             <section className="py-10 px-4 bg-white">
                 <div className="max-w-4xl mx-auto bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 rounded-2xl p-1 shadow-xl">
@@ -726,6 +751,12 @@
                             allowFullScreen 
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3759.390772714777!2d74.6645!3d19.6175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdc59e797806a6b%3A0x7b0e77c4f03a6289!2sKanda%20Market%2C%20Shrirampur!5e0!3m2!1sen!2sin">
                         </iframe>
+                        {/* Overlay Button for Specific Location Link */}
+                        <div className="absolute bottom-6 left-0 right-0 flex justify-center pointer-events-none">
+                            <a href="https://maps.app.goo.gl/xT4Jgy2L6ZV46uFB7" target="_blank" className="pointer-events-auto bg-white text-mauli-maroon px-6 py-2 rounded-full font-bold shadow-xl hover:scale-105 transition flex items-center gap-2 border border-mauli-maroon">
+                                <i className="ph-fill ph-navigation-arrow"></i> Open Exact Location
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -788,6 +819,8 @@
                         <span>❖</span><span>●</span><span>❖</span><span>●</span><span>❖</span>
                     </div>
                     <DiscountWheel />
+                    
+                    <WhatsAppGroup />
                     <InstagramPromo />
 
                     <Location />
