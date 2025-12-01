@@ -169,6 +169,19 @@
                     <circle cx="12" cy="7" r="4" />
                     <path d="M5 22v-2a7 7 0 0 1 14 0v2" />
                 </svg>
+            ),
+            Sack: () => (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 2l-5 5v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7l-5-5z" />
+                    <line x1="12" y1="2" x2="12" y2="7" />
+                    <path d="M12 12a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" />
+                </svg>
+            ),
+            Home: () => (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
             )
         };
 
@@ -413,7 +426,7 @@
                     icon: Icons.Grains, 
                     title: "गहू आणि तांदूळ", 
                     subtitle: "Wheat & Rice", 
-                    items: ["लोकवन गहू (Lokwan Wheat)", "बासमती तांदूळ (Basmati Rice)", "इंद्रायणी तांदूळ (Indrayani Rice)", "कोलम तांदूळ (Kolam Rice)", "बाजरी (Bajra)", "ज्वारी (Jowar)"], 
+                    items: ["लोकवन गहू (Lokwan Wheat)", "बासमती तांदूळ (Basmati Rice)", "इंद्रायणी तांदूळ (Indrayani Rice)", "कोलम तांदूळ (Kolam Rice)", "बाजरी (Bajra)", "ज्वारी (Jowar)", "सॉर्टेक्स गहू (Sortex Wheat)", "मदर इंडिया तांदूळ (Mother India Rice)", "चिनोर तांदूळ (Chinor Rice)", "आंबेमोहर तांदूळ (Ambemohar Rice)", "दावत बिर्याणी स्पेशल (Daawat Biryani Special)"], 
                     bg: "bg-orange-100", 
                     col: "text-orange-800" 
                 },
@@ -429,7 +442,7 @@
                     icon: Icons.Pulses, 
                     title: "डाळी आणि कडधान्ये", 
                     subtitle: "Dal & Pulses", 
-                    items: ["तूर डाळ (Toor Dal)", "मूग डाळ (Moong Dal)", "चना डाळ (Chana Dal)", "उडीद डाळ (Urad Dal)", "मटकी (Matki)", "चवळी (Chavali)", "मसूर डाळ (Masoor Dal)"], 
+                    items: ["तूर डाळ (Toor Dal)", "मूग डाळ (Moong Dal)", "चना डाळ (Chana Dal)", "उडीद डाळ (Urad Dal)", "मठ डाळ (Matki Dal)", "मसूर डाळ (Masoor Dal)", "मठ (Matki)", "मूग (Whole Moong)", "हरबरा (Harbara)", "राजमा (Rajma)", "छोले (Chole)", "हुलगे (Horse Gram)", "चवळी (Chavali)", "मसूर अख्खा (Whole Masoor)", "सफेद वाटाणा (White Peas)", "हिरवा वाटाणा (Green Peas)"], 
                     bg: "bg-red-50", 
                     col: "text-red-800" 
                 },
@@ -437,7 +450,7 @@
                     icon: Icons.Pooja, 
                     title: "पूजा साहित्य", 
                     subtitle: "Pooja Needs", 
-                    items: ["अगरबत्ती (Agarbatti)", "कापूर (Camphor)", "कुंकू आणि हळद (Kumkum & Haldi)", "दिवा तेल (Lamp Oil)", "फुलवात (Cotton Wicks)", "धूप (Dhoop)"], 
+                    items: ["अगरबत्ती (Agarbatti)", "कापूर (Camphor)", "कुंकू आणि हळद (Kumkum & Haldi)", "दिवा तेल (Lamp Oil)", "फुलवात (Cotton Wicks)", "धूप (Dhoop)", "शेंदूर, बुक्का, गुलाल (Shendur, Bukka, Gulal)", "गुलाब जल, गोमुत्र, गंगाजल (Rose Water, Gomutra, Gangajal)", "भीमसेनी कापूर (Bhimseni Camphor)", "कापूर दाणी (Kapoor Dani)", "पूजा बस्कर (Pooja Material)", "समई वात (Samai Wicks)"], 
                     bg: "bg-orange-50", 
                     col: "text-orange-800" 
                 },
@@ -445,7 +458,7 @@
                     icon: Icons.Tea, 
                     title: "चहा आणि साखर", 
                     subtitle: "Tea & Sugar", 
-                    items: ["प्रीमियम चहा (Premium Tea Powder)", "साखर (Sugar - Sulphur free)", "कॉफी (Coffee Powder)", "गूळ (Jaggery)", "ग्रीन टी (Green Tea)"], 
+                    items: ["प्रीमियम चहा (Premium Tea Powder)", "साखर (Sugar - Sulphur free)", "कॉफी (Coffee Powder)", "गूळ (Jaggery)", "ग्रीन टी (Green Tea)", "परिवार चहा (Parivar Tea)", "विक्रम चहा (Vikram Tea)", "सह्याद्री चहा (Sahyadri Tea)", "सायली चहा (Sayali Tea)", "फॅमिली चहा (Family Tea)", "वाघबकरी चहा (Wagh Bakri Tea)", "रेड लेबल चहा (Red Label Tea)", "नेसकॅफे कॉफी (Nescafe Coffee)", "ब्रु कॉफी (Bru Coffee)", "ब्लॅक कॉफी (Black Coffee)", "लिफ्टन ग्रीन टी (Lipton Green Tea)", "विक्रम ग्रीन टी (Vikram Green Tea)"], 
                     bg: "bg-amber-100", 
                     col: "text-amber-900" 
                 },
@@ -453,7 +466,7 @@
                     icon: Icons.Snacks, 
                     title: "नाश्ता आणि बेकरी", 
                     subtitle: "Snacks", 
-                    items: ["बिस्किटे (Biscuits)", "खारी आणि टोस्ट (Khari & Toast)", "फरसाण (Farsan/Namkeen)", "मॅगी आणि पास्ता (Maggie & Pasta)", "चिप्स (Chips)"], 
+                    items: ["बिस्किटे (Biscuits)", "खारी आणि टोस्ट (Khari & Toast)", "फरसाण (Farsan/Namkeen)", "मॅगी आणि पास्ता (Maggie & Pasta)", "चिप्स (Chips)", "चायनिज नूडल्स (Chinese Noodles)", "फरसाण आणि वेफर्स (Farsan & Wafers)"], 
                     bg: "bg-red-100", 
                     col: "text-red-900" 
                 },
@@ -461,7 +474,7 @@
                     icon: Icons.Spices, 
                     title: "मसाले", 
                     subtitle: "Spices", 
-                    items: ["मिरची पावडर (Chilli Powder)", "हळद पावडर (Turmeric Powder)", "धने पावडर (Coriander Powder)", "गरम मसाला (Garam Masala)", "गोडा मसाला (Goda Masala)", "जिरे आणि मोहरी (Cumin & Mustard)"], 
+                    items: ["मिरची पावडर (Chilli Powder)", "हळद पावडर (Turmeric Powder)", "धने पावडर (Coriander Powder)", "गरम मसाला (Garam Masala)", "गोडा मसाला (Goda Masala)", "जिरे आणि मोहरी (Cumin & Mustard)", "सुहाना, प्रवीण, अंबारी (Suhana, Pravin, Ambari)", "प्रीमियम रेंज (Premium Range)", "एव्हरेस्ट प्रीमियम रेंज (Everest Premium Range)"], 
                     bg: "bg-rose-50", 
                     col: "text-rose-900" 
                 },
@@ -477,7 +490,7 @@
                     icon: Icons.DryFruits, 
                     title: "सुका मेवा", 
                     subtitle: "Dry Fruits", 
-                    items: ["बदाम (Almonds)", "काजू (Cashews)", "मनुका (Raisins)", "खारीक (Dry Dates)", "अक्रोड (Walnuts)"], 
+                    items: ["बदाम (Almonds)", "काजू (Cashews)", "मनुका (Raisins)", "खारीक (Dry Dates)", "अक्रोड (Walnuts)", "पिस्ता (Pista)", "अंजीर (Figs)", "मखाना (Makhana)", "काळी किसमिस (Black Raisins)"], 
                     bg: "bg-purple-50", 
                     col: "text-purple-900" 
                 },
@@ -485,7 +498,7 @@
                     icon: Icons.Cleaning, 
                     title: "स्वच्छता उत्पादने", 
                     subtitle: "Cleaning Items", 
-                    items: ["कपडे धुण्याचा साबण (Laundry Soap)", "डिटर्जंट पावडर (Detergent Powder)", "भांडी घासण्याचा साबण (Dish Wash Bar)", "फिनाईल (Floor Cleaner)", "झाडू (Brooms)"], 
+                    items: ["कपडे धुण्याचा साबण (Laundry Soap)", "डिटर्जंट पावडर (Detergent Powder)", "भांडी घासण्याचा साबण (Dish Wash Bar)", "फिनाईल (Floor Cleaner)", "झाडू (Brooms)", "कॉटन मोप (Cotton Mop)", "जाळा झाडू (Cobweb Broom)", "बकेट मोप (Bucket Mop)", "टॉयलेट ब्रश (Toilet Brush)", "किचन वायपर (Kitchen Wiper)", "फरशी वायपर (Floor Wiper)"], 
                     bg: "bg-cyan-50", 
                     col: "text-cyan-900" 
                 },
@@ -497,6 +510,22 @@
                     bg: "bg-pink-50", 
                     col: "text-pink-900" 
                 },
+                {
+                    icon: Icons.Sack,
+                    title: "किराणा",
+                    subtitle: "General Grocery",
+                    items: ["साखर (Sugar)", "गुळ (Jaggery)", "गुळ पावडर (Jaggery Powder)", "शेंगदाणे (Peanuts)", "पोहे (Poha)", "रवा (Rava)", "मैदा (Maida)", "बेसन (Besan)", "भगर (Bhagar)", "साबुदाणा (Sabudana)", "गहू आटा (Wheat Atta)", "बाजरी आटा (Bajra Atta)", "ज्वारी आटा (Jowar Atta)", "डाळ बट्टी आटा (Dal Batti Atta)", "व इतर (And others)"],
+                    bg: "bg-yellow-100",
+                    col: "text-yellow-800"
+                },
+                {
+                    icon: Icons.Home,
+                    title: "घरगुती वस्तू",
+                    subtitle: "Household Items",
+                    items: ["क्रोकरी आणि कटलरी (Crockery & Cutlery)", "गार्डन मटेरियल (Garden Material)", "शेती मटेरियल (Farming Material)", "हार्डवेअर मटेरियल (Hardware Material)", "गिफ्ट आर्टिकल (Gift Articles)", "स्टेशनरी (Stationery)", "घड्याळ (Watches)", "लहान मुलांच्या खेळणी (Kids Toys)", "इलेक्ट्रॉनिक वस्तू (Electronics)", "बेबी प्रोडक्ट्स (Baby Products)", "बेबी केअर किट (Baby Care Kit)", "लेडीज प्रॉडक्ट्स (Ladies Products)"],
+                    bg: "bg-indigo-50",
+                    col: "text-indigo-900"
+                }
             ];
 
             return (
@@ -507,11 +536,183 @@
                             <p className="font-sans text-lg text-mauli-saffron font-bold">दैनंदिन जीवनावश्यक वस्तू</p>
                             <div className="w-16 h-1 bg-mauli-maroon mx-auto mt-4 rounded-full opacity-20"></div>
                         </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                             {products.map((p, i) => (
                                 <ProductCard key={i} {...p} colorClass={p.col} bgClass={p.bg} />
                             ))}
                         </div>
+                    </div>
+                </section>
+            );
+        };
+
+        const DiscountWheel = () => {
+            const [spinning, setSpinning] = useState(false);
+            const [rotation, setRotation] = useState(0);
+            const [result, setResult] = useState(null);
+
+            // The Wheel Data - 10 Segments
+            const segments = [
+                { label: '2%', value: 2, color: '#FFF3E0', text: '#800000' },   // Allowed
+                { label: '5%', value: 5, color: '#FF9933', text: '#FFFFFF' },   // Allowed
+                { label: '7%', value: 7, color: '#FFF3E0', text: '#800000' },   // Allowed
+                { label: '10%', value: 10, color: '#FF9933', text: '#FFFFFF' }, // Allowed
+                { label: '15%', value: 15, color: '#FFF3E0', text: '#800000' }, // Blocked
+                { label: '20%', value: 20, color: '#FF9933', text: '#FFFFFF' }, // Blocked
+                { label: '25%', value: 25, color: '#FFF3E0', text: '#800000' }, // Blocked
+                { label: '30%', value: 30, color: '#FF9933', text: '#FFFFFF' }, // Blocked
+                { label: '40%', value: 40, color: '#FFF3E0', text: '#800000' }, // Blocked
+                { label: '50%', value: 50, color: '#FF9933', text: '#FFFFFF' }, // Blocked
+            ];
+
+            const handleSpin = () => {
+                if (spinning) return;
+                
+                setSpinning(true);
+                setResult(null);
+
+                // RIGGED LOGIC: Only allow indices 0, 1, 2, or 3 (2%, 5%, 7%, 10%)
+                const allowedIndices = [0, 1, 2, 3];
+                const winnerIndex = allowedIndices[Math.floor(Math.random() * allowedIndices.length)];
+                
+                // Calculations
+                const segmentAngle = 360 / segments.length; // 36 degrees per segment
+                const spins = 8; // Number of full rotations
+                const baseRotation = 360 * spins;
+                
+                // We want the winner segment to end up at the top (0 degrees or 270/-90 depending on CSS)
+                // Assuming pointer is at Top (0deg).
+                // To bring segment i to top, we rotate backward by its angle.
+                // Random jitter +/- 10 deg to make it look natural (not dead center every time)
+                const jitter = Math.floor(Math.random() * 20) - 10;
+                
+                // Calculate target angle. 
+                // Note: Segment 0 starts at 0deg. Center is at 18deg.
+                // To bring Center of Segment 0 to 0deg (Top), we rotate: -18deg.
+                // To bring Center of Segment i to 0deg, we rotate: -(i * 36 + 18).
+                const targetRotation = baseRotation + (360 - (winnerIndex * segmentAngle + segmentAngle / 2)) + jitter;
+
+                setRotation(rotation + targetRotation); // Add to current to keep spinning forward
+
+                setTimeout(() => {
+                    setSpinning(false);
+                    setResult(segments[winnerIndex]);
+                }, 5000); // 5 seconds spin time
+            };
+
+            return (
+                <section className="py-16 px-4 bg-mauli-base border-t border-mauli-gold/20 overflow-hidden relative">
+                    <div className="absolute top-0 left-0 w-full h-full bg-om-pattern opacity-5 pointer-events-none"></div>
+                    
+                    <div className="max-w-4xl mx-auto text-center relative z-10">
+                        <div className="flex justify-center items-center gap-2 mb-4">
+                            <span className="text-mauli-maroon text-2xl">❖</span>
+                            <h2 className="font-display text-3xl md:text-4xl text-mauli-maroon">Lucky Discount Wheel</h2>
+                            <span className="text-mauli-maroon text-2xl">❖</span>
+                        </div>
+                        <p className="text-mauli-saffron font-bold mb-8">Spin to win extra discounts on your grocery bill!</p>
+
+                        <div className="relative w-80 h-80 md:w-96 md:h-96 mx-auto mb-8">
+                            {/* Pointer */}
+                            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
+                                <div className="w-0 h-0 border-l-[15px] border-l-transparent border-r-[15px] border-r-transparent border-t-[30px] border-t-mauli-maroon drop-shadow-md"></div>
+                            </div>
+
+                            {/* The Wheel */}
+                            <div 
+                                className="w-full h-full rounded-full border-8 border-mauli-gold shadow-2xl relative overflow-hidden transition-transform cubic-bezier(0.2, 0.8, 0.2, 1)"
+                                style={{ 
+                                    transform: `rotate(${rotation}deg)`,
+                                    transitionDuration: spinning ? '5s' : '0s',
+                                    transitionTimingFunction: 'cubic-bezier(0.25, 0.1, 0.25, 1)'
+                                }}
+                            >
+                                <svg viewBox="0 0 100 100" className="w-full h-full transform -rotate-90">
+                                    {segments.map((seg, i) => {
+                                        // Calculate SVG path for a 36-degree slice
+                                        // Center (50,50), Radius 50.
+                                        // Start Angle: i * 36
+                                        // End Angle: (i+1) * 36
+                                        const startAngle = (i * 36) * Math.PI / 180;
+                                        const endAngle = ((i + 1) * 36) * Math.PI / 180;
+                                        const x1 = 50 + 50 * Math.cos(startAngle);
+                                        const y1 = 50 + 50 * Math.sin(startAngle);
+                                        const x2 = 50 + 50 * Math.cos(endAngle);
+                                        const y2 = 50 + 50 * Math.sin(endAngle);
+                                        
+                                        // Path command
+                                        const d = `M50,50 L${x1},${y1} A50,50 0 0,1 ${x2},${y2} Z`;
+                                        
+                                        // Text Rotation
+                                        const textAngle = (i * 36) + 18;
+                                        
+                                        return (
+                                            <g key={i}>
+                                                <path d={d} fill={seg.color} stroke="#fff" strokeWidth="0.5" />
+                                                <text 
+                                                    x="75" 
+                                                    y="50" 
+                                                    fill={seg.text} 
+                                                    fontSize="5" 
+                                                    fontWeight="bold" 
+                                                    fontFamily="sans-serif"
+                                                    textAnchor="middle" 
+                                                    alignmentBaseline="middle"
+                                                    transform={`rotate(${textAngle}, 50, 50)`}
+                                                >
+                                                    {seg.label}
+                                                </text>
+                                            </g>
+                                        );
+                                    })}
+                                </svg>
+                            </div>
+
+                            {/* Center Button */}
+                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                                <button 
+                                    onClick={handleSpin}
+                                    disabled={spinning}
+                                    className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-mauli-maroon border-4 border-white text-white font-bold shadow-lg flex items-center justify-center hover:scale-105 active:scale-95 transition disabled:opacity-80 disabled:cursor-not-allowed"
+                                >
+                                    {spinning ? '...' : 'SPIN'}
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* Result Display */}
+                        <AnimatePresence>
+                            {result && (
+                                <motion.div 
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    className="bg-white border-2 border-mauli-gold rounded-xl p-6 max-w-sm mx-auto shadow-xl"
+                                >
+                                    <h3 className="text-xl text-gray-500 font-bold mb-1">Congratulations!</h3>
+                                    <div className="text-4xl font-display text-mauli-maroon mb-2">
+                                        {result.label} OFF
+                                    </div>
+                                    <div className="bg-orange-50 text-orange-800 text-xs px-3 py-2 rounded-lg font-bold border border-orange-100 inline-block">
+                                        Discount applied on MRP
+                                    </div>
+                                    <p className="text-xs text-gray-400 mt-2 font-medium">
+                                        *Minimum shopping of ₹299 required to avail this offer.
+                                    </p>
+                                    <button 
+                                        onClick={() => window.open(`https://wa.me/917218924624?text=I won ${result.label} discount on the wheel! I want to order.`, '_blank')}
+                                        className="mt-4 bg-green-600 text-white text-sm px-6 py-2 rounded-full font-bold hover:bg-green-700 transition"
+                                    >
+                                        Claim on WhatsApp
+                                    </button>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                        
+                        {!result && !spinning && (
+                             <p className="text-xs text-gray-400 mt-4 max-w-md mx-auto">
+                                *Terms: Discount applicable on Maximum Retail Price (MRP). Valid on total bill value above ₹299.
+                            </p>
+                        )}
                     </div>
                 </section>
             );
@@ -566,7 +767,7 @@
                             style={{border:0, filter: 'grayscale(0.2)'}}
                             loading="lazy" 
                             allowFullScreen 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.576885347209!2d73.7997!3d18.4575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDI3JzI3LjAiTiA3M8KwNDcnNTguOSJF!5e0!3m2!1sen!2sin!4v1635756789012!5m2!1sen!2sin">
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3759.390772714777!2d74.6645!3d19.6175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdc59e797806a6b%3A0x7b0e77c4f03a6289!2sKanda%20Market%2C%20Shrirampur!5e0!3m2!1sen!2sin">
                         </iframe>
                     </div>
                 </div>
@@ -624,6 +825,13 @@
                     </div>
 
                     <Products />
+                    
+                    {/* Discount Wheel Added Here */}
+                    <div className="py-6 bg-orange-50 border-y border-mauli-gold/10 flex justify-center gap-4 text-mauli-maroon/20">
+                        <span>❖</span><span>●</span><span>❖</span><span>●</span><span>❖</span>
+                    </div>
+                    <DiscountWheel />
+
                     <Location />
                     <Footer />
                     <MobileNav />
