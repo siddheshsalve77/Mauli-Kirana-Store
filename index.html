@@ -69,6 +69,12 @@
             mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
             -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
         }
+        
+        /* Checkbox Custom Style */
+        .custom-checkbox:checked {
+            background-color: #800000;
+            border-color: #800000;
+        }
     </style>
 </head>
 <body>
@@ -81,7 +87,6 @@
         // --- Custom SVG Icons for Reliability ---
         
         const Icons = {
-            // Divine Logo with Tulsi Leaf
             Kalash: () => (
                 <svg viewBox="0 0 100 120" className="w-full h-full" fill="none">
                     <defs>
@@ -97,150 +102,36 @@
                             </feMerge>
                         </filter>
                     </defs>
-                    
-                    {/* The Brick (Vite) */}
                     <rect x="15" y="95" width="70" height="15" rx="3" fill="#8B3A3A" stroke="#5e2626" strokeWidth="1" />
                     <path d="M15 102 H85" stroke="#5e2626" strokeWidth="0.5" opacity="0.5" />
-
-                    {/* The Tilak (U Shape) - Calligraphic Style */}
-                    <path 
-                        d="M30 25 Q30 75 50 75 Q70 75 70 25" 
-                        stroke="url(#goldGradient)" 
-                        strokeWidth="12" 
-                        strokeLinecap="round" 
-                        fill="none" 
-                        filter="url(#glow)"
-                    />
-                    
-                    {/* The Dot (Bukya/Chandan) */}
+                    <path d="M30 25 Q30 75 50 75 Q70 75 70 25" stroke="url(#goldGradient)" strokeWidth="12" strokeLinecap="round" fill="none" filter="url(#glow)"/>
                     <ellipse cx="50" cy="55" rx="5" ry="10" fill="#1a1a1a" />
-                    
-                    {/* Tulsi Leaf (Holy Basil) */}
-                    <path 
-                        d="M50 95 Q60 85 65 95 Q60 105 50 95" 
-                        fill="#4CAF50" 
-                        stroke="#2E7D32" 
-                        strokeWidth="0.5" 
-                        transform="rotate(-15, 50, 95)"
-                    />
+                    <path d="M50 95 Q60 85 65 95 Q60 105 50 95" fill="#4CAF50" stroke="#2E7D32" strokeWidth="0.5" transform="rotate(-15, 50, 95)"/>
                 </svg>
             ),
-            Grains: () => (
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M5 21c0-6 4-10 4-10" />
-                    <path d="M19 21c0-6-4-10-4-10" />
-                    <path d="M12 21V8" />
-                    <path d="M12 8c0-4-3-6-3-6s-3 2-3 6" />
-                    <path d="M12 8c0-4 3-6 3-6s3 2 3 6" />
-                </svg>
-            ),
-            Oil: () => (
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 2C8 6 5 9.5 5 13a7 7 0 0 0 14 0c0-3.5-3-7-7-11z" />
-                    <path d="M12 16a2 2 0 0 1-1.4-.6" />
-                </svg>
-            ),
-            Pulses: () => (
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 17c4.97 0 9-1.79 9-4V9c0-2.21-4.03-4-9-4S3 6.79 3 9v4c0 2.21 4.03 4 9 4z" />
-                    <path d="M3 13v4c0 2.21 4.03 4 9 4s9-1.79 9-4v-4" />
-                </svg>
-            ),
-            Pooja: () => (
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 2c0 0-3 3-3 7s3 7 3 7 3-3 3-7-3-7-3-7z" />
-                    <path d="M12 16c-3 0-5 2-5 4s2 2 5 2 5-2 5-2-2-4-5-4z" />
-                </svg>
-            ),
-            Tea: () => (
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M18 8h1a4 4 0 0 1 0 8h-1" />
-                    <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" />
-                    <line x1="6" y1="1" x2="6" y2="4" />
-                    <line x1="10" y1="1" x2="10" y2="4" />
-                    <line x1="14" y1="1" x2="14" y2="4" />
-                </svg>
-            ),
-            Snacks: () => (
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="9" />
-                    <path d="M8.5 8.5h.01" />
-                    <path d="M15.5 8.5h.01" />
-                    <path d="M12 12h.01" />
-                    <path d="M8.5 15.5h.01" />
-                    <path d="M15.5 15.5h.01" />
-                </svg>
-            ),
-            Spices: () => (
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 2c0 0-2 4-2 7s2 5 2 5 2-2 2-5-2-7-2-7z" />
-                    <path d="M10.5 20c0 1.1.9 2 2 2s2-.9 2-2" />
-                    <path d="M9 13s-3 1-3 4c0 2 2 3 3 3" />
-                    <path d="M15 13s3 1 3 4c0 2-2 3-3 3" />
-                </svg>
-            ),
-            Dairy: () => (
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M8 2h8v4H8z" />
-                    <path d="M9 6v14c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2V6" />
-                    <path d="M12 14h.01" />
-                </svg>
-            ),
-            DryFruits: () => (
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 21a9 9 0 0 0 9-9c0-4.97-9-13-9-13S3 7.03 3 12a9 9 0 0 0 9 9z" />
-                    <path d="M12 3v18" />
-                    <path d="M12 14l4 4" />
-                    <path d="M12 10l-4 4" />
-                </svg>
-            ),
-            Cleaning: () => (
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 2v20" />
-                    <path d="M4 12l8-8 8 8" />
-                    <path d="M16 16l-4 4-4-4" />
-                </svg>
-            ),
-            PersonalCare: () => (
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="7" r="4" />
-                    <path d="M5 22v-2a7 7 0 0 1 14 0v2" />
-                </svg>
-            ),
-            Sack: () => (
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 2l-5 5v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7l-5-5z" />
-                    <line x1="12" y1="2" x2="12" y2="7" />
-                    <path d="M12 12a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" />
-                </svg>
-            ),
-            Home: () => (
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                    <polyline points="9 22 9 12 15 12 15 22" />
-                </svg>
-            )
+            Grains: () => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 21c0-6 4-10 4-10" /><path d="M19 21c0-6-4-10-4-10" /><path d="M12 21V8" /><path d="M12 8c0-4-3-6-3-6s-3 2-3 6" /><path d="M12 8c0-4 3-6 3-6s3 2 3 6" /></svg>,
+            Oil: () => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2C8 6 5 9.5 5 13a7 7 0 0 0 14 0c0-3.5-3-7-7-11z" /><path d="M12 16a2 2 0 0 1-1.4-.6" /></svg>,
+            Pulses: () => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 17c4.97 0 9-1.79 9-4V9c0-2.21-4.03-4-9-4S3 6.79 3 9v4c0 2.21 4.03 4 9 4z" /><path d="M3 13v4c0 2.21 4.03 4 9 4s9-1.79 9-4v-4" /></svg>,
+            Pooja: () => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2c0 0-3 3-3 7s3 7 3 7 3-3 3-7-3-7-3-7z" /><path d="M12 16c-3 0-5 2-5 4s2 2 5 2 5-2 5-2-2-4-5-4z" /></svg>,
+            Tea: () => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1" /><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" /><line x1="6" y1="1" x2="6" y2="4" /><line x1="10" y1="1" x2="10" y2="4" /><line x1="14" y1="1" x2="14" y2="4" /></svg>,
+            Snacks: () => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9" /><path d="M8.5 8.5h.01" /><path d="M15.5 8.5h.01" /><path d="M12 12h.01" /><path d="M8.5 15.5h.01" /><path d="M15.5 15.5h.01" /></svg>,
+            Spices: () => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2c0 0-2 4-2 7s2 5 2 5 2-2 2-5-2-7-2-7z" /><path d="M10.5 20c0 1.1.9 2 2 2s2-.9 2-2" /><path d="M9 13s-3 1-3 4c0 2 2 3 3 3" /><path d="M15 13s3 1 3 4c0 2-2 3-3 3" /></svg>,
+            Dairy: () => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M8 2h8v4H8z" /><path d="M9 6v14c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2V6" /><path d="M12 14h.01" /></svg>,
+            DryFruits: () => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 21a9 9 0 0 0 9-9c0-4.97-9-13-9-13S3 7.03 3 12a9 9 0 0 0 9 9z" /><path d="M12 3v18" /><path d="M12 14l4 4" /><path d="M12 10l-4 4" /></svg>,
+            Cleaning: () => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v20" /><path d="M4 12l8-8 8 8" /><path d="M16 16l-4 4-4-4" /></svg>,
+            PersonalCare: () => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="7" r="4" /><path d="M5 22v-2a7 7 0 0 1 14 0v2" /></svg>,
+            Sack: () => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2l-5 5v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7l-5-5z" /><line x1="12" y1="2" x2="12" y2="7" /><path d="M12 12a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" /></svg>,
+            Home: () => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg>
         };
 
         const SamaiLamp = ({ className }) => (
             <svg viewBox="0 0 100 300" className={className}>
-                <motion.path 
-                    d="M50 20 Q40 40 50 50 Q60 40 50 20" 
-                    fill="#FF4500" 
-                    animate={{ scale: [1, 1.1, 1], opacity: [0.8, 1, 0.8] }}
-                    transition={{ duration: 0.8, repeat: Infinity }}
-                />
-                <motion.circle 
-                    cx="50" cy="35" r="5" 
-                    fill="#FFD700" 
-                    animate={{ opacity: [0.5, 1, 0.5] }}
-                    transition={{ duration: 0.5, repeat: Infinity }}
-                />
+                <motion.path d="M50 20 Q40 40 50 50 Q60 40 50 20" fill="#FF4500" animate={{ scale: [1, 1.1, 1], opacity: [0.8, 1, 0.8] }} transition={{ duration: 0.8, repeat: Infinity }} />
+                <motion.circle cx="50" cy="35" r="5" fill="#FFD700" animate={{ opacity: [0.5, 1, 0.5] }} transition={{ duration: 0.5, repeat: Infinity }} />
                 <path d="M50 50 L50 60" stroke="#000" strokeWidth="2"/>
                 <path d="M20 60 Q50 80 80 60 L80 70 Q50 90 20 70 Z" fill="#D4AF37" stroke="#B8860B" strokeWidth="1"/>
                 <rect x="46" y="70" width="8" height="150" fill="#D4AF37"/>
-                <circle cx="50" cy="110" r="6" fill="#B8860B"/>
-                <circle cx="50" cy="160" r="6" fill="#B8860B"/>
+                <circle cx="50" cy="110" r="6" fill="#B8860B"/><circle cx="50" cy="160" r="6" fill="#B8860B"/>
                 <path d="M20 220 Q50 200 80 220 L90 280 H10 L20 220" fill="#D4AF37" stroke="#B8860B" strokeWidth="1"/>
             </svg>
         );
@@ -258,36 +149,81 @@
                         <stop offset="100%" stopColor="#DAA520" />
                     </linearGradient>
                 </defs>
-                
-                {/* Brick */}
                 <rect x="30" y="180" width="140" height="30" rx="4" fill="url(#brickGrad)" stroke="#5e2121" strokeWidth="1"/>
-                
-                {/* Tilak */}
-                <motion.path 
-                    d="M70 50 V120 C70 160 130 160 130 120 V50" 
-                    stroke="url(#goldGrad)" 
-                    strokeWidth="20" 
-                    strokeLinecap="round" 
-                    fill="none"
-                    initial={{ pathLength: 0, opacity: 0 }}
-                    animate={{ pathLength: 1, opacity: 1 }}
-                    transition={{ duration: 2.5, ease: "easeInOut" }}
-                />
-                
-                {/* Chandan Dot */}
-                <motion.g
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ delay: 2, type: "spring" }}
-                >
-                    <ellipse cx="100" cy="95" rx="10" ry="18" fill="#1a1a1a"/>
-                </motion.g>
-                
-                {/* Flowers at ends of brick */}
-                <circle cx="35" cy="175" r="7" fill="#FFA500" />
-                <circle cx="165" cy="175" r="7" fill="#FFA500" />
+                <motion.path d="M70 50 V120 C70 160 130 160 130 120 V50" stroke="url(#goldGrad)" strokeWidth="20" strokeLinecap="round" fill="none" initial={{ pathLength: 0, opacity: 0 }} animate={{ pathLength: 1, opacity: 1 }} transition={{ duration: 2.5, ease: "easeInOut" }} />
+                <motion.g initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 2, type: "spring" }}><ellipse cx="100" cy="95" rx="10" ry="18" fill="#1a1a1a"/></motion.g>
+                <circle cx="35" cy="175" r="7" fill="#FFA500" /><circle cx="165" cy="175" r="7" fill="#FFA500" />
             </svg>
         );
+
+        // --- Data Source ---
+        const PRODUCTS_DATA = [
+            { 
+                icon: Icons.Grains, title: "गहू आणि तांदूळ", subtitle: "Wheat & Rice", 
+                items: ["लोकवन गहू (Lokwan Wheat)", "बासमती तांदूळ (Basmati Rice)", "इंद्रायणी तांदूळ (Indrayani Rice)", "कोलम तांदूळ (Kolam Rice)", "बाजरी (Bajra)", "ज्वारी (Jowar)", "सॉर्टेक्स गहू (Sortex Wheat)", "मदर इंडिया तांदूळ (Mother India Rice)", "चिनोर तांदूळ (Chinor Rice)", "आंबेमोहर तांदूळ (Ambemohar Rice)", "दावत बिर्याणी स्पेशल (Daawat Biryani Special)"], 
+                bg: "bg-orange-100", col: "text-orange-800" 
+            },
+            { 
+                icon: Icons.Oil, title: "शुद्ध तेल आणि तूप", subtitle: "Oils & Ghee", 
+                items: ["शेंगदाणा तेल (Groundnut Oil)", "सूर्यफूल तेल (Sunflower Oil)", "सोयाबीन तेल (Soybean Oil)", "शुद्ध गाईचे तूप (Pure Cow Ghee)", "म्हशीचे तूप (Buffalo Ghee)"], 
+                bg: "bg-yellow-100", col: "text-yellow-800" 
+            },
+            { 
+                icon: Icons.Pulses, title: "डाळी आणि कडधान्ये", subtitle: "Dal & Pulses", 
+                items: ["तूर डाळ (Toor Dal)", "मूग डाळ (Moong Dal)", "चना डाळ (Chana Dal)", "उडीद डाळ (Urad Dal)", "मठ डाळ (Matki Dal)", "मसूर डाळ (Masoor Dal)", "मठ (Matki)", "मूग (Whole Moong)", "हरबरा (Harbara)", "राजमा (Rajma)", "छोले (Chole)", "हुलगे (Horse Gram)", "चवळी (Chavali)", "मसूर अख्खा (Whole Masoor)", "सफेद वाटाणा (White Peas)", "हिरवा वाटाणा (Green Peas)"], 
+                bg: "bg-red-50", col: "text-red-800" 
+            },
+            { 
+                icon: Icons.Pooja, title: "पूजा साहित्य", subtitle: "Pooja Needs", 
+                items: ["अगरबत्ती (Agarbatti)", "कापूर (Camphor)", "कुंकू आणि हळद (Kumkum & Haldi)", "दिवा तेल (Lamp Oil)", "फुलवात (Cotton Wicks)", "धूप (Dhoop)", "शेंदूर, बुक्का, गुलाल (Shendur, Bukka, Gulal)", "गुलाब जल, गोमुत्र, गंगाजल (Rose Water, Gomutra, Gangajal)", "भीमसेनी कापूर (Bhimseni Camphor)", "कापूर दाणी (Kapoor Dani)", "पूजा बस्कर (Pooja Material)", "समई वात (Samai Wicks)"], 
+                bg: "bg-orange-50", col: "text-orange-800" 
+            },
+            { 
+                icon: Icons.Tea, title: "चहा आणि कॉफी", subtitle: "Tea & Coffee", 
+                items: ["प्रीमियम चहा (Premium Tea Powder)", "कॉफी (Coffee Powder)", "ग्रीन टी (Green Tea)", "परिवार चहा (Parivar Tea)", "विक्रम चहा (Vikram Tea)", "सह्याद्री चहा (Sahyadri Tea)", "सायली चहा (Sayali Tea)", "फॅमिली चहा (Family Tea)", "वाघबकरी चहा (Wagh Bakri Tea)", "रेड लेबल चहा (Red Label Tea)", "नेसकॅफे कॉफी (Nescafe Coffee)", "ब्रु कॉफी (Bru Coffee)", "ब्लॅक कॉफी (Black Coffee)", "लिफ्टन ग्रीन टी (Lipton Green Tea)", "विक्रम ग्रीन टी (Vikram Green Tea)"], 
+                bg: "bg-amber-100", col: "text-amber-900" 
+            },
+            { 
+                icon: Icons.Snacks, title: "नाश्ता आणि बेकरी", subtitle: "Snacks", 
+                items: ["बिस्किटे (Biscuits)", "खारी आणि टोस्ट (Khari & Toast)", "फरसाण (Farsan/Namkeen)", "मॅगी आणि पास्ता (Maggie & Pasta)", "चिप्स (Chips)", "चायनिज नूडल्स (Chinese Noodles)", "फरसाण आणि वेफर्स (Farsan & Wafers)"], 
+                bg: "bg-red-100", col: "text-red-900" 
+            },
+            { 
+                icon: Icons.Spices, title: "मसाले", subtitle: "Spices", 
+                items: ["मिरची पावडर (Chilli Powder)", "हळद पावडर (Turmeric Powder)", "धने पावडर (Coriander Powder)", "गरम मसाला (Garam Masala)", "गोडा मसाला (Goda Masala)", "जिरे आणि मोहरी (Cumin & Mustard)", "सुहाना, प्रवीण, अंबारी (Suhana, Pravin, Ambari)", "प्रीमियम रेंज (Premium Range)", "एव्हरेस्ट प्रीमियम रेंज (Everest Premium Range)"], 
+                bg: "bg-rose-50", col: "text-rose-900" 
+            },
+            { 
+                icon: Icons.Dairy, title: "दुग्धजन्य पदार्थ", subtitle: "Dairy", 
+                items: ["ताजे दूध (Fresh Milk)", "दही (Curd)", "ताक (Buttermilk)", "पनीर (Paneer)", "बटर आणि चीज (Butter & Cheese)"], 
+                bg: "bg-blue-50", col: "text-blue-900" 
+            },
+            { 
+                icon: Icons.DryFruits, title: "सुका मेवा", subtitle: "Dry Fruits", 
+                items: ["बदाम (Almonds)", "काजू (Cashews)", "मनुका (Raisins)", "खारीक (Dry Dates)", "अक्रोड (Walnuts)", "पिस्ता (Pista)", "अंजीर (Figs)", "मखाना (Makhana)", "काळी किसमिस (Black Raisins)"], 
+                bg: "bg-purple-50", col: "text-purple-900" 
+            },
+            { 
+                icon: Icons.Cleaning, title: "स्वच्छता उत्पादने", subtitle: "Cleaning Items", 
+                items: ["कपडे धुण्याचा साबण (Laundry Soap)", "डिटर्जंट पावडर (Detergent Powder)", "भांडी घासण्याचा साबण (Dish Wash Bar)", "फिनाईल (Floor Cleaner)", "झाडू (Brooms)", "कॉटन मोप (Cotton Mop)", "जाळा झाडू (Cobweb Broom)", "बकेट मोप (Bucket Mop)", "टॉयलेट ब्रश (Toilet Brush)", "किचन वायपर (Kitchen Wiper)", "फरशी वायपर (Floor Wiper)"], 
+                bg: "bg-cyan-50", col: "text-cyan-900" 
+            },
+            { 
+                icon: Icons.PersonalCare, title: "वैयक्तिक काळजी", subtitle: "Personal Care", 
+                items: ["आंघोळीचा साबण (Bath Soap)", "शॅम्पू (Shampoo)", "हेअर ऑइल (Hair Oil)", "टूथपेस्ट (Toothpaste)", "टॅल्कम पावडर (Talcum Powder)"], 
+                bg: "bg-pink-50", col: "text-pink-900" 
+            },
+            {
+                icon: Icons.Sack, title: "किराणा", subtitle: "General Grocery", 
+                items: ["साखर (Sugar)", "गुळ (Jaggery)", "गुळ पावडर (Jaggery Powder)", "शेंगदाणे (Peanuts)", "पोहे (Poha)", "रवा (Rava)", "मैदा (Maida)", "बेसन (Besan)", "भगर (Bhagar)", "साबुदाणा (Sabudana)", "गहू आटा (Wheat Atta)", "बाजरी आटा (Bajra Atta)", "ज्वारी आटा (Jowar Atta)", "डाळ बट्टी आटा (Dal Batti Atta)", "व इतर (And others)"],
+                bg: "bg-yellow-100", col: "text-yellow-800"
+            },
+            {
+                icon: Icons.Home, title: "घरगुती वस्तू", subtitle: "Household Items", 
+                items: ["क्रोकरी आणि कटलरी (Crockery & Cutlery)", "गार्डन मटेरियल (Garden Material)", "शेती मटेरियल (Farming Material)", "हार्डवेअर मटेरियल (Hardware Material)", "गिफ्ट आर्टिकल (Gift Articles)", "स्टेशनरी (Stationery)", "घड्याळ (Watches)", "लहान मुलांच्या खेळणी (Kids Toys)", "इलेक्ट्रॉनिक वस्तू (Electronics)", "बेबी प्रोडक्ट्स (Baby Products)", "बेबी केअर किट (Baby Care Kit)", "लेडीज प्रॉडक्ट्स (Ladies Products)"],
+                bg: "bg-indigo-50", col: "text-indigo-900"
+            }
+        ];
 
         // --- Main App Components ---
 
@@ -345,11 +281,9 @@
         const Hero = () => {
             return (
                 <section id="home" className="relative pt-12 pb-24 px-4 overflow-hidden bg-om-pattern">
-                    {/* Arch Background */}
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[140%] md:w-[80%] h-[500px] border-t-[60px] border-white/60 rounded-t-[50%] pointer-events-none z-0"></div>
 
                     <div className="max-w-5xl mx-auto text-center relative z-10">
-                        {/* Divine Glow/Aura Container */}
                         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-orange-400 rounded-full blur-3xl opacity-30 z-0"></div>
 
                         <motion.div 
@@ -410,27 +344,20 @@
                 whileHover={{ y: -8 }}
                 className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-mauli-gold/20 overflow-hidden group"
             >
-                {/* Interactive Logo Header */}
                 <div className={`${bgClass} h-36 flex items-center justify-center relative overflow-hidden`}>
                     <div className="absolute inset-0 bg-white/10 opacity-30"></div>
-                    
-                    {/* Badge Container */}
                     <motion.div 
                         className="relative z-10 w-20 h-20 rounded-full bg-white shadow-lg flex items-center justify-center border-4 border-white text-mauli-maroon p-4"
                         whileHover={{ scale: 1.1, rotate: 5 }}
                         transition={{ type: "spring", stiffness: 300, damping: 15 }}
                     >
-                        {/* Spinning Ring */}
                         <motion.div 
                             className="absolute inset-0 rounded-full border-2 border-dashed border-mauli-gold/40"
                             animate={{ rotate: 360 }}
                             transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
                         />
-                        
                         <IconComponent />
                     </motion.div>
-
-                    {/* Background Pattern */}
                     <div className="absolute top-0 right-0 p-2 opacity-10">
                          <i className="ph-fill ph-sparkle text-4xl text-mauli-maroon"></i>
                     </div>
@@ -458,113 +385,6 @@
         );
 
         const Products = () => {
-            const products = [
-                { 
-                    icon: Icons.Grains, 
-                    title: "गहू आणि तांदूळ", 
-                    subtitle: "Wheat & Rice", 
-                    items: ["लोकवन गहू (Lokwan Wheat)", "बासमती तांदूळ (Basmati Rice)", "इंद्रायणी तांदूळ (Indrayani Rice)", "कोलम तांदूळ (Kolam Rice)", "बाजरी (Bajra)", "ज्वारी (Jowar)", "सॉर्टेक्स गहू (Sortex Wheat)", "मदर इंडिया तांदूळ (Mother India Rice)", "चिनोर तांदूळ (Chinor Rice)", "आंबेमोहर तांदूळ (Ambemohar Rice)", "दावत बिर्याणी स्पेशल (Daawat Biryani Special)"], 
-                    bg: "bg-orange-100", 
-                    col: "text-orange-800" 
-                },
-                { 
-                    icon: Icons.Oil, 
-                    title: "शुद्ध तेल आणि तूप", 
-                    subtitle: "Oils & Ghee", 
-                    items: ["शेंगदाणा तेल (Groundnut Oil)", "सूर्यफूल तेल (Sunflower Oil)", "सोयाबीन तेल (Soybean Oil)", "शुद्ध गाईचे तूप (Pure Cow Ghee)", "म्हशीचे तूप (Buffalo Ghee)"], 
-                    bg: "bg-yellow-100", 
-                    col: "text-yellow-800" 
-                },
-                { 
-                    icon: Icons.Pulses, 
-                    title: "डाळी आणि कडधान्ये", 
-                    subtitle: "Dal & Pulses", 
-                    items: ["तूर डाळ (Toor Dal)", "मूग डाळ (Moong Dal)", "चना डाळ (Chana Dal)", "उडीद डाळ (Urad Dal)", "मठ डाळ (Matki Dal)", "मसूर डाळ (Masoor Dal)", "मठ (Matki)", "मूग (Whole Moong)", "हरबरा (Harbara)", "राजमा (Rajma)", "छोले (Chole)", "हुलगे (Horse Gram)", "चवळी (Chavali)", "मसूर अख्खा (Whole Masoor)", "सफेद वाटाणा (White Peas)", "हिरवा वाटाणा (Green Peas)"], 
-                    bg: "bg-red-50", 
-                    col: "text-red-800" 
-                },
-                { 
-                    icon: Icons.Pooja, 
-                    title: "पूजा साहित्य", 
-                    subtitle: "Pooja Needs", 
-                    items: ["अगरबत्ती (Agarbatti)", "कापूर (Camphor)", "कुंकू आणि हळद (Kumkum & Haldi)", "दिवा तेल (Lamp Oil)", "फुलवात (Cotton Wicks)", "धूप (Dhoop)", "शेंदूर, बुक्का, गुलाल (Shendur, Bukka, Gulal)", "गुलाब जल, गोमुत्र, गंगाजल (Rose Water, Gomutra, Gangajal)", "भीमसेनी कापूर (Bhimseni Camphor)", "कापूर दाणी (Kapoor Dani)", "पूजा बस्कर (Pooja Material)", "समई वात (Samai Wicks)"], 
-                    bg: "bg-orange-50", 
-                    col: "text-orange-800" 
-                },
-                { 
-                    icon: Icons.Tea, 
-                    title: "चहा आणि कॉफी", 
-                    subtitle: "Tea & Coffee", 
-                    items: ["प्रीमियम चहा (Premium Tea Powder)", "कॉफी (Coffee Powder)", "ग्रीन टी (Green Tea)", "परिवार चहा (Parivar Tea)", "विक्रम चहा (Vikram Tea)", "सह्याद्री चहा (Sahyadri Tea)", "सायली चहा (Sayali Tea)", "फॅमिली चहा (Family Tea)", "वाघबकरी चहा (Wagh Bakri Tea)", "रेड लेबल चहा (Red Label Tea)", "नेसकॅफे कॉफी (Nescafe Coffee)", "ब्रु कॉफी (Bru Coffee)", "ब्लॅक कॉफी (Black Coffee)", "लिफ्टन ग्रीन टी (Lipton Green Tea)", "विक्रम ग्रीन टी (Vikram Green Tea)"], 
-                    bg: "bg-amber-100", 
-                    col: "text-amber-900" 
-                },
-                { 
-                    icon: Icons.Snacks, 
-                    title: "नाश्ता आणि बेकरी", 
-                    subtitle: "Snacks", 
-                    items: ["बिस्किटे (Biscuits)", "खारी आणि टोस्ट (Khari & Toast)", "फरसाण (Farsan/Namkeen)", "मॅगी आणि पास्ता (Maggie & Pasta)", "चिप्स (Chips)", "चायनिज नूडल्स (Chinese Noodles)", "फरसाण आणि वेफर्स (Farsan & Wafers)"], 
-                    bg: "bg-red-100", 
-                    col: "text-red-900" 
-                },
-                { 
-                    icon: Icons.Spices, 
-                    title: "मसाले", 
-                    subtitle: "Spices", 
-                    items: ["मिरची पावडर (Chilli Powder)", "हळद पावडर (Turmeric Powder)", "धने पावडर (Coriander Powder)", "गरम मसाला (Garam Masala)", "गोडा मसाला (Goda Masala)", "जिरे आणि मोहरी (Cumin & Mustard)", "सुहाना, प्रवीण, अंबारी (Suhana, Pravin, Ambari)", "प्रीमियम रेंज (Premium Range)", "एव्हरेस्ट प्रीमियम रेंज (Everest Premium Range)"], 
-                    bg: "bg-rose-50", 
-                    col: "text-rose-900" 
-                },
-                { 
-                    icon: Icons.Dairy, 
-                    title: "दुग्धजन्य पदार्थ", 
-                    subtitle: "Dairy", 
-                    items: ["ताजे दूध (Fresh Milk)", "दही (Curd)", "ताक (Buttermilk)", "पनीर (Paneer)", "बटर आणि चीज (Butter & Cheese)"], 
-                    bg: "bg-blue-50", 
-                    col: "text-blue-900" 
-                },
-                { 
-                    icon: Icons.DryFruits, 
-                    title: "सुका मेवा", 
-                    subtitle: "Dry Fruits", 
-                    items: ["बदाम (Almonds)", "काजू (Cashews)", "मनुका (Raisins)", "खारीक (Dry Dates)", "अक्रोड (Walnuts)", "पिस्ता (Pista)", "अंजीर (Figs)", "मखाना (Makhana)", "काळी किसमिस (Black Raisins)"], 
-                    bg: "bg-purple-50", 
-                    col: "text-purple-900" 
-                },
-                { 
-                    icon: Icons.Cleaning, 
-                    title: "स्वच्छता उत्पादने", 
-                    subtitle: "Cleaning Items", 
-                    items: ["कपडे धुण्याचा साबण (Laundry Soap)", "डिटर्जंट पावडर (Detergent Powder)", "भांडी घासण्याचा साबण (Dish Wash Bar)", "फिनाईल (Floor Cleaner)", "झाडू (Brooms)", "कॉटन मोप (Cotton Mop)", "जाळा झाडू (Cobweb Broom)", "बकेट मोप (Bucket Mop)", "टॉयलेट ब्रश (Toilet Brush)", "किचन वायपर (Kitchen Wiper)", "फरशी वायपर (Floor Wiper)"], 
-                    bg: "bg-cyan-50", 
-                    col: "text-cyan-900" 
-                },
-                { 
-                    icon: Icons.PersonalCare, 
-                    title: "वैयक्तिक काळजी", 
-                    subtitle: "Personal Care", 
-                    items: ["आंघोळीचा साबण (Bath Soap)", "शॅम्पू (Shampoo)", "हेअर ऑइल (Hair Oil)", "टूथपेस्ट (Toothpaste)", "टॅल्कम पावडर (Talcum Powder)"], 
-                    bg: "bg-pink-50", 
-                    col: "text-pink-900" 
-                },
-                {
-                    icon: Icons.Sack,
-                    title: "किराणा",
-                    subtitle: "General Grocery",
-                    items: ["साखर (Sugar)", "गुळ (Jaggery)", "गुळ पावडर (Jaggery Powder)", "शेंगदाणे (Peanuts)", "पोहे (Poha)", "रवा (Rava)", "मैदा (Maida)", "बेसन (Besan)", "भगर (Bhagar)", "साबुदाणा (Sabudana)", "गहू आटा (Wheat Atta)", "बाजरी आटा (Bajra Atta)", "ज्वारी आटा (Jowar Atta)", "डाळ बट्टी आटा (Dal Batti Atta)", "व इतर (And others)"],
-                    bg: "bg-yellow-100",
-                    col: "text-yellow-800"
-                },
-                {
-                    icon: Icons.Home,
-                    title: "घरगुती वस्तू",
-                    subtitle: "Household Items",
-                    items: ["क्रोकरी आणि कटलरी (Crockery & Cutlery)", "गार्डन मटेरियल (Garden Material)", "शेती मटेरियल (Farming Material)", "हार्डवेअर मटेरियल (Hardware Material)", "गिफ्ट आर्टिकल (Gift Articles)", "स्टेशनरी (Stationery)", "घड्याळ (Watches)", "लहान मुलांच्या खेळणी (Kids Toys)", "इलेक्ट्रॉनिक वस्तू (Electronics)", "बेबी प्रोडक्ट्स (Baby Products)", "बेबी केअर किट (Baby Care Kit)", "लेडीज प्रॉडक्ट्स (Ladies Products)"],
-                    bg: "bg-indigo-50",
-                    col: "text-indigo-900"
-                }
-            ];
-
             return (
                 <section id="products" className="py-20 px-4 bg-mauli-base">
                     <div className="max-w-7xl mx-auto">
@@ -574,10 +394,84 @@
                             <div className="w-16 h-1 bg-mauli-maroon mx-auto mt-4 rounded-full opacity-20"></div>
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                            {products.map((p, i) => (
+                            {PRODUCTS_DATA.map((p, i) => (
                                 <ProductCard key={i} {...p} colorClass={p.col} bgClass={p.bg} />
                             ))}
                         </div>
+                    </div>
+                </section>
+            );
+        };
+
+        const ShoppingList = () => {
+            const [cart, setCart] = useState({});
+            
+            const toggleItem = (item) => {
+                setCart(prev => {
+                    const newCart = {...prev};
+                    if (newCart[item]) delete newCart[item];
+                    else newCart[item] = true;
+                    return newCart;
+                });
+            };
+
+            const sendList = () => {
+                const items = Object.keys(cart);
+                if (items.length === 0) {
+                    alert("कृपया यादीत काहीतरी निवडा (Please select items first)");
+                    return;
+                }
+                const message = "नमस्कार माऊली किराणा! माझी किराणा यादी (Grocery List):%0a" + items.map((i, idx) => `${idx + 1}. ${i}`).join("%0a");
+                window.open(`https://wa.me/917218924624?text=${message}`, '_blank');
+            };
+
+            return (
+                <section className="py-16 px-4 bg-orange-50 border-t border-mauli-gold/20">
+                    <div className="max-w-5xl mx-auto">
+                        <div className="text-center mb-10">
+                            <h2 className="font-display text-3xl md:text-4xl text-mauli-maroon mb-2">तुमची किराणा यादी बनवा</h2>
+                            <p className="text-mauli-saffron font-bold">Make Your Grocery List & Send on WhatsApp</p>
+                        </div>
+                        
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+                            {PRODUCTS_DATA.map(cat => (
+                                <div key={cat.title} className="bg-white p-5 rounded-xl border border-mauli-gold/30 shadow-sm hover:shadow-md transition">
+                                    <h3 className="font-bold text-mauli-maroon mb-3 border-b border-gray-100 pb-2 flex items-center gap-2">
+                                        <div className="w-2 h-2 rounded-full bg-mauli-gold"></div>
+                                        {cat.title}
+                                    </h3>
+                                    <div className="space-y-2 max-h-60 overflow-y-auto pr-2 custom-scrollbar">
+                                        {cat.items.map(item => (
+                                            <label key={item} className="flex items-start gap-3 cursor-pointer hover:bg-orange-50 p-2 rounded transition group">
+                                                <input type="checkbox" 
+                                                    className="mt-1 accent-mauli-maroon w-4 h-4 cursor-pointer"
+                                                    checked={!!cart[item]}
+                                                    onChange={() => toggleItem(item)}
+                                                />
+                                                <span className={`text-sm ${cart[item] ? 'text-mauli-maroon font-bold' : 'text-gray-600'} group-hover:text-mauli-maroon transition`}>{item}</span>
+                                            </label>
+                                        ))}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Floating Bottom Bar */}
+                        <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-mauli-gold/30 p-4 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] z-40 flex justify-between items-center md:justify-center md:gap-8">
+                            <div className="text-sm font-bold text-gray-700">
+                                {Object.keys(cart).length} वस्तू निवडल्या (Items Selected)
+                            </div>
+                            <button 
+                                onClick={sendList}
+                                className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full font-bold shadow-lg flex items-center gap-2 transform active:scale-95 transition"
+                            >
+                                <i className="ph-fill ph-whatsapp-logo text-xl"></i>
+                                Send List
+                            </button>
+                        </div>
+                        
+                        {/* Space for fixed footer */}
+                        <div className="h-16"></div>
                     </div>
                 </section>
             );
@@ -588,7 +482,6 @@
             const [rotation, setRotation] = useState(0);
             const [result, setResult] = useState(null);
 
-            // The Wheel Data - 10 Segments
             const segments = [
                 { label: '2%', value: 2, color: '#FFF3E0', text: '#800000' },   // Allowed
                 { label: '5%', value: 5, color: '#FF9933', text: '#FFFFFF' },   // Allowed
@@ -612,11 +505,9 @@
                 const allowedIndices = [0, 1];
                 const winnerIndex = allowedIndices[Math.floor(Math.random() * allowedIndices.length)];
                 
-                // Calculations
-                const segmentAngle = 360 / segments.length; // 36 degrees per segment
-                const spins = 8; // Number of full rotations
+                const segmentAngle = 360 / segments.length;
+                const spins = 8;
                 const baseRotation = 360 * spins;
-                
                 const jitter = Math.floor(Math.random() * 20) - 10;
                 const targetRotation = baseRotation + (360 - (winnerIndex * segmentAngle + segmentAngle / 2)) + jitter;
 
@@ -873,6 +764,7 @@
                         <span>❖</span><span>●</span><span>❖</span><span>●</span><span>❖</span>
                     </div>
                     <DiscountWheel />
+                    <ShoppingList />
                     <InstagramPromo />
 
                     <Location />
