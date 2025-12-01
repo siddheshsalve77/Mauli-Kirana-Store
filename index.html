@@ -81,11 +81,48 @@
         // --- Custom SVG Icons for Reliability ---
         
         const Icons = {
+            // New Divine Logo with Tulsi Leaf
             Kalash: () => (
-                <svg viewBox="0 0 100 100" className="w-full h-full" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M25 45 Q25 85 50 85 Q75 85 75 45 Q75 30 50 30 Q25 30 25 45" fill="#fff7ed" />
-                    <circle cx="50" cy="22" r="10" fill="#D4AF37" stroke="none" />
-                    <path d="M35 30 Q20 15 35 10 M65 30 Q80 15 65 10" stroke="#15803d" strokeWidth="3" />
+                <svg viewBox="0 0 100 120" className="w-full h-full" fill="none">
+                    <defs>
+                        <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stopColor="#FFD700" />
+                            <stop offset="100%" stopColor="#FFA500" />
+                        </linearGradient>
+                        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    
+                    {/* The Brick (Vite) */}
+                    <rect x="15" y="95" width="70" height="15" rx="3" fill="#8B3A3A" stroke="#5e2626" strokeWidth="1" />
+                    <path d="M15 102 H85" stroke="#5e2626" strokeWidth="0.5" opacity="0.5" />
+
+                    {/* The Tilak (U Shape) - Calligraphic Style */}
+                    <path 
+                        d="M30 25 Q30 75 50 75 Q70 75 70 25" 
+                        stroke="url(#goldGradient)" 
+                        strokeWidth="12" 
+                        strokeLinecap="round" 
+                        fill="none" 
+                        filter="url(#glow)"
+                    />
+                    
+                    {/* The Dot (Bukya/Chandan) */}
+                    <ellipse cx="50" cy="55" rx="5" ry="10" fill="#1a1a1a" />
+                    
+                    {/* Tulsi Leaf (Holy Basil) - Adding the spiritual touch */}
+                    <path 
+                        d="M50 95 Q60 85 65 95 Q60 105 50 95" 
+                        fill="#4CAF50" 
+                        stroke="#2E7D32" 
+                        strokeWidth="0.5" 
+                        transform="rotate(-15, 50, 95)"
+                    />
                 </svg>
             ),
             Grains: () => (
@@ -456,9 +493,9 @@
                 },
                 { 
                     icon: Icons.Tea, 
-                    title: "चहा आणि साखर", 
-                    subtitle: "Tea & Sugar", 
-                    items: ["प्रीमियम चहा (Premium Tea Powder)", "साखर (Sugar - Sulphur free)", "कॉफी (Coffee Powder)", "गूळ (Jaggery)", "ग्रीन टी (Green Tea)", "परिवार चहा (Parivar Tea)", "विक्रम चहा (Vikram Tea)", "सह्याद्री चहा (Sahyadri Tea)", "सायली चहा (Sayali Tea)", "फॅमिली चहा (Family Tea)", "वाघबकरी चहा (Wagh Bakri Tea)", "रेड लेबल चहा (Red Label Tea)", "नेसकॅफे कॉफी (Nescafe Coffee)", "ब्रु कॉफी (Bru Coffee)", "ब्लॅक कॉफी (Black Coffee)", "लिफ्टन ग्रीन टी (Lipton Green Tea)", "विक्रम ग्रीन टी (Vikram Green Tea)"], 
+                    title: "चहा आणि कॉफी", 
+                    subtitle: "Tea & Coffee", 
+                    items: ["प्रीमियम चहा (Premium Tea Powder)", "कॉफी (Coffee Powder)", "ग्रीन टी (Green Tea)", "परिवार चहा (Parivar Tea)", "विक्रम चहा (Vikram Tea)", "सह्याद्री चहा (Sahyadri Tea)", "सायली चहा (Sayali Tea)", "फॅमिली चहा (Family Tea)", "वाघबकरी चहा (Wagh Bakri Tea)", "रेड लेबल चहा (Red Label Tea)", "नेसकॅफे कॉफी (Nescafe Coffee)", "ब्रु कॉफी (Bru Coffee)", "ब्लॅक कॉफी (Black Coffee)", "लिफ्टन ग्रीन टी (Lipton Green Tea)", "विक्रम ग्रीन टी (Vikram Green Tea)"], 
                     bg: "bg-amber-100", 
                     col: "text-amber-900" 
                 },
@@ -555,8 +592,8 @@
             const segments = [
                 { label: '2%', value: 2, color: '#FFF3E0', text: '#800000' },   // Allowed
                 { label: '5%', value: 5, color: '#FF9933', text: '#FFFFFF' },   // Allowed
-                { label: '7%', value: 7, color: '#FFF3E0', text: '#800000' },   // Allowed
-                { label: '10%', value: 10, color: '#FF9933', text: '#FFFFFF' }, // Allowed
+                { label: '7%', value: 7, color: '#FFF3E0', text: '#800000' },   // Blocked
+                { label: '10%', value: 10, color: '#FF9933', text: '#FFFFFF' }, // Blocked
                 { label: '15%', value: 15, color: '#FFF3E0', text: '#800000' }, // Blocked
                 { label: '20%', value: 20, color: '#FF9933', text: '#FFFFFF' }, // Blocked
                 { label: '25%', value: 25, color: '#FFF3E0', text: '#800000' }, // Blocked
@@ -571,8 +608,8 @@
                 setSpinning(true);
                 setResult(null);
 
-                // RIGGED LOGIC: Only allow indices 0, 1, 2, or 3 (2%, 5%, 7%, 10%)
-                const allowedIndices = [0, 1, 2, 3];
+                // RIGGED LOGIC: Only allow indices 0 (2%) or 1 (5%)
+                const allowedIndices = [0, 1];
                 const winnerIndex = allowedIndices[Math.floor(Math.random() * allowedIndices.length)];
                 
                 // Calculations
@@ -580,24 +617,15 @@
                 const spins = 8; // Number of full rotations
                 const baseRotation = 360 * spins;
                 
-                // We want the winner segment to end up at the top (0 degrees or 270/-90 depending on CSS)
-                // Assuming pointer is at Top (0deg).
-                // To bring segment i to top, we rotate backward by its angle.
-                // Random jitter +/- 10 deg to make it look natural (not dead center every time)
                 const jitter = Math.floor(Math.random() * 20) - 10;
-                
-                // Calculate target angle. 
-                // Note: Segment 0 starts at 0deg. Center is at 18deg.
-                // To bring Center of Segment 0 to 0deg (Top), we rotate: -18deg.
-                // To bring Center of Segment i to 0deg, we rotate: -(i * 36 + 18).
                 const targetRotation = baseRotation + (360 - (winnerIndex * segmentAngle + segmentAngle / 2)) + jitter;
 
-                setRotation(rotation + targetRotation); // Add to current to keep spinning forward
+                setRotation(rotation + targetRotation);
 
                 setTimeout(() => {
                     setSpinning(false);
                     setResult(segments[winnerIndex]);
-                }, 5000); // 5 seconds spin time
+                }, 5000); 
             };
 
             return (
@@ -613,12 +641,10 @@
                         <p className="text-mauli-saffron font-bold mb-8">Spin to win extra discounts on your grocery bill!</p>
 
                         <div className="relative w-80 h-80 md:w-96 md:h-96 mx-auto mb-8">
-                            {/* Pointer */}
                             <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
                                 <div className="w-0 h-0 border-l-[15px] border-l-transparent border-r-[15px] border-r-transparent border-t-[30px] border-t-mauli-maroon drop-shadow-md"></div>
                             </div>
 
-                            {/* The Wheel */}
                             <div 
                                 className="w-full h-full rounded-full border-8 border-mauli-gold shadow-2xl relative overflow-hidden transition-transform cubic-bezier(0.2, 0.8, 0.2, 1)"
                                 style={{ 
@@ -629,21 +655,13 @@
                             >
                                 <svg viewBox="0 0 100 100" className="w-full h-full transform -rotate-90">
                                     {segments.map((seg, i) => {
-                                        // Calculate SVG path for a 36-degree slice
-                                        // Center (50,50), Radius 50.
-                                        // Start Angle: i * 36
-                                        // End Angle: (i+1) * 36
                                         const startAngle = (i * 36) * Math.PI / 180;
                                         const endAngle = ((i + 1) * 36) * Math.PI / 180;
                                         const x1 = 50 + 50 * Math.cos(startAngle);
                                         const y1 = 50 + 50 * Math.sin(startAngle);
                                         const x2 = 50 + 50 * Math.cos(endAngle);
                                         const y2 = 50 + 50 * Math.sin(endAngle);
-                                        
-                                        // Path command
                                         const d = `M50,50 L${x1},${y1} A50,50 0 0,1 ${x2},${y2} Z`;
-                                        
-                                        // Text Rotation
                                         const textAngle = (i * 36) + 18;
                                         
                                         return (
@@ -668,7 +686,6 @@
                                 </svg>
                             </div>
 
-                            {/* Center Button */}
                             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
                                 <button 
                                     onClick={handleSpin}
@@ -680,7 +697,6 @@
                             </div>
                         </div>
 
-                        {/* Result Display */}
                         <AnimatePresence>
                             {result && (
                                 <motion.div 
@@ -688,21 +704,21 @@
                                     animate={{ opacity: 1, y: 0 }}
                                     className="bg-white border-2 border-mauli-gold rounded-xl p-6 max-w-sm mx-auto shadow-xl"
                                 >
-                                    <h3 className="text-xl text-gray-500 font-bold mb-1">Congratulations!</h3>
+                                    <h3 className="text-xl text-gray-500 font-bold mb-1">अभिनंदन!</h3>
                                     <div className="text-4xl font-display text-mauli-maroon mb-2">
-                                        {result.label} OFF
+                                        {result.label} सूट
                                     </div>
                                     <div className="bg-orange-50 text-orange-800 text-xs px-3 py-2 rounded-lg font-bold border border-orange-100 inline-block">
-                                        Discount applied on MRP
+                                        सूट एम.आर.पी. (MRP) वर लागू
                                     </div>
                                     <p className="text-xs text-gray-400 mt-2 font-medium">
-                                        *Minimum shopping of ₹299 required to avail this offer.
+                                        *या ऑफरचा लाभ घेण्यासाठी किमान ₹४९९ ची खरेदी आवश्यक आहे.
                                     </p>
                                     <button 
-                                        onClick={() => window.open(`https://wa.me/917218924624?text=I won ${result.label} discount on the wheel! I want to order.`, '_blank')}
+                                        onClick={() => window.open(`https://wa.me/917218924624?text=नमस्कार! मला व्हीलवर ${result.label} डिस्काउंट मिळाले आहे. मला ऑर्डर करायची आहे.`, '_blank')}
                                         className="mt-4 bg-green-600 text-white text-sm px-6 py-2 rounded-full font-bold hover:bg-green-700 transition"
                                     >
-                                        Claim on WhatsApp
+                                        व्हॉट्सॲपवर क्लेम करा
                                     </button>
                                 </motion.div>
                             )}
@@ -710,7 +726,7 @@
                         
                         {!result && !spinning && (
                              <p className="text-xs text-gray-400 mt-4 max-w-md mx-auto">
-                                *Terms: Discount applicable on Maximum Retail Price (MRP). Valid on total bill value above ₹299.
+                                *अटी व शर्ती लागू: किमान ₹४९९ च्या खरेदीवर सूट उपलब्ध.
                             </p>
                         )}
                     </div>
